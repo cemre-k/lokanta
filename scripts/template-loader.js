@@ -1,20 +1,20 @@
-const navbarDiv = document.getElementById("nav-placeholder")
-const footerDiv = document.getElementById("footer-placeholder")
+const navbarDiv = document.getElementById("nav-placeholder");
+const footerDiv = document.getElementById("footer-placeholder");
 
-async function navbarLoad() {
-    const res  = await fetch("../templates/navbar.html");
+async function loadTemplate(url, element) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
     const html = await res.text();
-    navbarDiv.innerHTML=  html;
-    document.dispatchEvent(new Event("navbarLoaded"));
+    element.innerHTML = html;
+    console.log(`Loaded: ${url}`); // Debug log
+  } catch (error) {
+    console.error(error);
+    // Fallback: Show error message in the placeholder
+    element.innerHTML = `<p style="color: red;">Error loading ${url.split('/').pop()}</p>`;
+  }
 }
 
-async function footerLoad() {
-    const res  = await fetch("../templates/footer.html");
-    const html = await res.text();
-    footerDiv.innerHTML=  html;
-}
-
-
-
-navbarLoad();
-footerLoad();
+// Load templates
+loadTemplate("../templates/navbar.html", navbarDiv);
+loadTemplate("../templates/footer.html", footerDiv);
