@@ -95,7 +95,7 @@ main{
 .hero {
     
     position: relative;
-    padding: 18px;
+    padding: 1rem;
     box-sizing: border-box;
     background-color: var(--item-color);
     display: flex;
@@ -121,12 +121,7 @@ main{
     color: transparent;
 }
 
-.hero h3{
-    font-size: 1.3rem;
-    width: 100%;
-    top: 0;
-    left: 0;
-}
+
 
 .hero-img {
     width: 30%;
@@ -152,28 +147,74 @@ footer span{
 }
 
 .yemek-tipi{
-    display: grid;
-    gap:35px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap:2rem;
     width: 100%;
 }
 
 .yemek-element{
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
-    height: 100px;
-    border: 2px solid red;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 48%;
+    height: 8rem;
     background-color: white;
+    gap:8rem
 
 }
 
-.product-img{
-    border:1px solid blue;
-    width: 80px;
-    height: 80px;
+.yemek-isim-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:3rem;
+    padding-left: 2rem;
+}
+.yemek-isim-logo span{
+    font-size: 2.4rem;
+    font-family: outfit,sans-serif;
+    font-weight: 300;
+}
+
+.product-img{    
+    width: 5rem;
+    height: 5rem;  
     
 }
+
+.fiyat-span{
+    font-family: outfit , sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    padding-right: 2rem;
+
+}
+
+.yemek-tipi-heading{
+    position: relative;
+    margin-top: 0;
+    
+    text-align: center;
+    font-family: outfit , sans-serif;
+    font-size:2.5rem;
+}
+.yemek-tipi-heading::after{
+    content: "";
+    position: absolute;
+    width: 140%;
+    height: 2px;
+    background-color: black;
+    bottom: -0.5rem;
+    left:-20%;
+}
+
+
 
 
 @media (max-width : 1200px) {
@@ -223,9 +264,15 @@ footer span{
     .hero h2{
         width: fit-content;
     }
-    .hero img{
-        z-index: -2;
-        width: 90%;
-    }
     
+    .product-img{
+        margin-left: 0;
+    }
+     
+    .yemek-element{
+        width: 100%;
+        align-items: center;
+        
+    }
 }
+
