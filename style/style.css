@@ -152,6 +152,7 @@ footer span{
     flex-wrap: wrap;
     gap:2rem;
     width: 100%;
+    justify-content:center;
 }
 
 .yemek-element{
@@ -162,7 +163,7 @@ footer span{
     border-radius: 1rem;
     padding: 1rem;
     box-sizing: border-box;
-    width: 48%;
+    width: 45%;
     height: 8rem;
     background-color: white;
     gap:8rem
