@@ -7,7 +7,7 @@
     --navbar-text: #fff;
     --section-border: greenyellow;
     --text-color : black;
-    --item-color:rgba(216, 172, 147, 0.199);
+    --item-color:rgba(243, 200, 151, 0.836);
     --accent-color: rgba(255, 166, 0, 0.712);
 }
 
@@ -36,6 +36,7 @@ main{
 #navbar{
     position: fixed;
     top:0;
+    z-index: 1000;
 }
 
 #navbar svg{
@@ -92,10 +93,13 @@ main{
 }
 
 .hero {
+    
+    position: relative;
     padding: 18px;
     box-sizing: border-box;
     background-color: var(--item-color);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     width: 95%;
     overflow: hidden;
@@ -117,13 +121,20 @@ main{
     color: transparent;
 }
 
-.hero img {
+.hero h3{
+    font-size: 1.3rem;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hero-img {
     width: 30%;
     border-radius: 3rem;
 }
 
 .hidden {
-        display: none;
+        display: none !important;
     }
 
 footer{
@@ -140,7 +151,32 @@ footer span{
     color:white;
 }
 
-@media (max-width : 900px) {
+.yemek-tipi{
+    display: grid;
+    gap:35px;
+    width: 100%;
+}
+
+.yemek-element{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 100px;
+    border: 2px solid red;
+    background-color: white;
+
+}
+
+.product-img{
+    border:1px solid blue;
+    width: 80px;
+    height: 80px;
+    
+}
+
+
+@media (max-width : 1200px) {
       .navbar-bg {
         position: fixed;
         top: 10px; 
@@ -167,6 +203,7 @@ footer span{
         padding-top: 30px;
         width: 100%;
         left: 0;
+        
        
     }
     
